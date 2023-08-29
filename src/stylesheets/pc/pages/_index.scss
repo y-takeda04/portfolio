@@ -621,7 +621,7 @@
   @include RESPONSIVE('SP', $MIN_WIDTH){
     h3 {
       font-size: 1.3rem;
-      margin-bottom: 25px;
+      margin-bottom: 0;
     }
   }
   
@@ -740,6 +740,9 @@
       font-style: italic;
       padding-bottom: 80px;
       width: 100px;
+      @include RESPONSIVE('SP', $MIN_WIDTH){
+        padding-bottom: 30px;
+      }
     }
   }
   
@@ -829,7 +832,8 @@
       margin-bottom: 40px;
       padding: 0.5rem 1.5rem;
       font-size: 0.5rem;
-      margin: 0 0 0 auto;
+      margin: 0 auto;
+      width: 60vw;
     }
   }
   
@@ -1060,7 +1064,7 @@
       text-align: center;
       margin-top: 3rem;
       margin: 0 auto;
-      margin-top: -200px;
+      margin-top: -100px;
       z-index: 0;
     }
   }
@@ -1078,7 +1082,7 @@
   @include RESPONSIVE('SP', $MIN_WIDTH){
     .margin img {
       margin: 0;
-      width: 80%;
+      width: 70%;
       margin-bottom: 1.5rem;
     }
   }
@@ -1110,13 +1114,13 @@
   @include RESPONSIVE('SP', $MIN_WIDTH) {
     .insta_r img {
       margin: 0;
-      width: 80%;
+      width: 70%;
     }
   }
   
   @media screen and (min-width: 1500px) {
     .insta_r img {
-      width: 20rem;
+      width: 350px;
     }
   }
   
@@ -1258,7 +1262,7 @@
   
   @include RESPONSIVE('SP', $MIN_WIDTH){
     .contact_fm a {
-      width: 130px;
+      width: 50vw;
       padding-right: 30px;
       padding-left: 30px;
       margin: 15px auto 0;
