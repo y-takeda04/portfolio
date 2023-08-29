@@ -1,0 +1,314 @@
+/* ------------------------------------------- SASS Information
+ Name:      _collage.scss
+ Author:    #{$WEB_AUTHOR}
+ Modifier:  #{$WEB_MODIFIER}
+----------------------------------------------------------- */
+.page-collage {
+  @include RESPONSIVE('PC', $MIN_WIDTH) {}
+  @include RESPONSIVE('SP', $MIN_WIDTH) {}
+
+  margin: 0;
+  width: 100%;
+  
+/*/////////*/
+
+.conts-body {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.hamburger {
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 100;
+}
+
+.hamburger_bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  background: #000;
+  transition: top 0.24s, transform 0.24s, opacity 0.24s;
+
+  &:nth-child(1) {
+    top: 0;
+  }
+
+  &:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:nth-child(3) {
+    top: 100%;
+    transform: translateY(-100%);
+  }
+
+  &.is_active {
+    &:nth-child(1) {
+      top: 50%;
+      transform: translateY(-50%) rotate(135deg);
+    }
+
+    &:nth-child(2) {
+      transform: translate(50%, -50%);
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      top: 50%;
+      transform: translateY(-50%) rotate(-135deg);
+    }
+  }
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.24s;
+  pointer-events: none;
+
+  &.is_active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.flexbox {
+  display: flex;
+
+  a {
+    width: 50vw;
+    height: 100vh;
+
+    img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: auto 8rem;
+  padding-left: 0;
+
+  li a:hover {
+    color: #707070;
+    transition: all 0.3s ease-out;
+  }
+}
+
+button {
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 3rem;
+}
+
+/*///////////////////*/
+
+#top {
+  margin: 0 auto 0;
+  animation-name: fadeInAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  width: 85%;
+  height: 85%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    margin: 5.5rem auto 0;
+  }
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/*///////*/
+
+#text_area {
+  width: 85%;
+  margin: 5rem auto;
+  border-bottom: 1px solid #000;
+}
+
+.text_top {
+  color: #000;
+  font-size: 1.8rem;
+  font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+  letter-spacing: 0.2rem;
+  padding-left: 40px;
+}
+
+.text {
+  color: #000;
+  font-size: 0.8rem;
+  font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+  letter-spacing: 0.1rem;
+  line-height: 30px;
+  padding-left: 40px;
+  margin-bottom: 5rem;
+}
+
+/*////////////////*/
+
+#container {
+  width: 85%;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
+
+/*/////////*/
+
+.back {
+  color: #000;
+  font-size: 1rem;
+  margin: 5rem auto;
+  font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+  letter-spacing: 0.1rem;
+  display: block;
+  width: 10rem;
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1.5px;
+    background-color: #000;
+    transition: all .3s;
+    transform: scaleX(0);
+  }
+
+  &:hover:after {
+    width: 100%;
+    transform: scaleX(1);
+  }
+}
+
+/*///////////////////////////////*/
+
+.fooder {
+  width: 100%;
+  margin-bottom: 0;
+  background: #000;
+  height: 25rem;
+}
+
+.fooder_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 5rem;
+  margin: 0 auto;
+  border-bottom: 1px solid #fff;
+  padding-top: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+h6 {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0;
+  font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+.insta_btn:hover {
+  color: #707070;
+}
+
+.menu_box {
+  width: 80%;
+  height: 3rem;
+  margin: 4rem auto 0;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 0;
+
+    li a {
+      color: #fff;
+      font-size: 1rem;
+      font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+      letter-spacing: 0.3rem;
+      text-decoration: none;
+      margin-right: 3rem;
+
+      &:hover {
+        color: #707070;
+        transition: all 0.5s ease-out;
+      }
+    }
+  }
+}
+
+.fooder_down {
+  color: #707070;
+  font-size: 0.5rem;
+  margin: 0 auto;
+  width: 80%;
+  font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+}
+
+/*/////////////////////*/
+
+}

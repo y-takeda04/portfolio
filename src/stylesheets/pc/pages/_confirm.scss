@@ -1,0 +1,47 @@
+/* ------------------------------------------- SASS Information
+ Name:      _confirm.scss
+ Author:    #{$WEB_AUTHOR}
+ Modifier:  #{$WEB_MODIFIER}
+----------------------------------------------------------- */
+.page-confirm {
+  @include RESPONSIVE('PC', $MIN_WIDTH) {}
+  @include RESPONSIVE('SP', $MIN_WIDTH) {}
+
+  @charset "UTF-8";
+
+/* CSS Document */
+
+body {
+  background-color: #f9fff2;
+}
+
+.input-area {
+  margin-bottom: 20px;
+}
+
+p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.btn-border {
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  border: 2px solid #9ec34b;
+  font-size: 15px;
+  color: #9ec34b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: .4s;
+
+  &:hover {
+    background-color: #707070;
+    border-color: #545454;
+    color: #FFF;
+  }
+}
+
+}

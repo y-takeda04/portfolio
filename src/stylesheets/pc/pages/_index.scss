@@ -1,0 +1,1405 @@
+/* ------------------------------------------- SASS Information
+ Name:      _index.scss
+ Author:    #{$WEB_AUTHOR}
+ Modifier:  #{$WEB_MODIFIER}
+----------------------------------------------------------- */
+.page-index {
+  
+// @media print, screen and (min-width: 781px) {}
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+// @include RESPONSIVE('PC', $MIN_WIDTH) {}
+  
+// @media only screen and (max-width: 780px)
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+// @include RESPONSIVE('SP', $MIN_WIDTH) {}
+
+  margin: 0;
+  width: 100%;
+  background-color: #f3f4f0;
+  
+  @include RESPONSIVE('PC', $MIN_WIDTH) {}
+  @include RESPONSIVE('SP', $MIN_WIDTH) {}
+
+ 
+  .genre {
+    transform: translateY(30px);
+    
+    visibility: hidden;
+    transition: transform 1s, opacity 1s, visibility 1s;
+  }
+  
+  .js-fadein {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .fadein {
+    transition: all 1s;
+    opacity: 0;
+  
+    &.active {
+      opacity: 1;
+    }
+  }
+  
+  ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+  }
+  
+  /*//////////////*/
+  .header_top {
+    font-size: 1.5rem;
+    display: block;
+    position: fixed;
+    z-index: 1;
+    margin: 1.5rem 3rem 0 3rem;
+    text-decoration: none;
+    text-decoration-color: #000;
+    color: #000;
+    font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+    letter-spacing: 0.1rem;
+    @include RESPONSIVE('SP', $MIN_WIDTH){
+      font-size: 0.8rem;
+      margin: 20px 10px 0 10px;
+      font-weight: 500;
+    }
+  }
+  
+  /*/////////*/
+  .conts-body {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+  }
+  
+  .hamburger {
+    width: 30px;
+    height: 25px;
+    position: fixed;
+    top: 25px;
+    right: 50px;
+    z-index: 100;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .hamburger {
+      width: 25px;
+      height: 20px;
+      right: 15px;
+      top: 20px;
+    }
+  }
+  
+  .hamburger_bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    background: #000;
+    transition: top 0.24s, transform 0.24s, opacity 0.24s;
+  
+    &:nth-child(1) {
+      top: 0;
+    }
+  
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    &:nth-child(3) {
+      top: 100%;
+      transform: translateY(-100%);
+    }
+  
+    &.is_active {
+      &:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(135deg);
+      }
+  
+      &:nth-child(2) {
+        transform: translate(50%, -50%);
+        opacity: 0;
+      }
+  
+      &:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%) rotate(-135deg);
+      }
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .hamburger_bar {
+      height: 2px;
+    }
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+  
+    &.is_active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .nav {
+      display: block;
+      width: 100vw;
+    }
+  }
+  
+  .flexbox {
+    display: flex;
+  
+    a {
+      width: 50vw;
+      height: 100vh;
+  
+      img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .flexbox a {
+      width: 0;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .flexbox a img {
+      display: none;
+    }
+  }
+  
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: auto 8rem;
+    padding-left: 0;
+  
+    li a:hover {
+      color: #707070;
+      transition: all 0.3s ease-out;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .nav-list {
+      margin: auto 0;
+      width: 90vw;
+      padding-left: 40px;
+    }
+  }
+  
+  button {
+    border-color: transparent;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: #000;
+    font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+    letter-spacing: 0.1rem;
+    font-size: 3rem;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .nav-list li a {
+      font-size: 2rem;
+    }
+  }
+  
+  /*////////////////////////////////*/
+  #top {
+    display: flex;
+    align-items: flex-end;
+    // align-items: flex-end; // TODO
+    position: relative;
+    height: 720px;
+    bottom: 0;
+    top: auto;
+  
+    .fade {
+      display: block;
+  
+      li {
+        width: 85%;
+        position: absolute;
+        top: 18%;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        animation: fade 15s infinite;
+  
+        &:nth-child(1) {
+          animation-delay: 0s;
+        }
+  
+        &:nth-child(2) {
+          animation-delay: 5s;
+        }
+  
+        &:nth-child(3) {
+          animation-delay: 10s;
+        }
+  
+        img {
+          width: 100%;
+          height: 720px;
+          object-fit: cover;
+          bottom: 0;
+        }
+      }
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    #top {
+      height: 88vh;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #top .fade li img {
+      height: 88vh;
+    }
+  }
+  
+  @media screen and (min-width: 1600px) {
+    #top .fade li img {
+      height: 90vh;
+    }
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+  
+    15% {
+      opacity: 1;
+    }
+  
+    30% {
+      opacity: 1;
+    }
+  
+    45% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* scroll */
+  
+  .scrolldown {
+    position: absolute;
+    margin-left: 100px;
+  
+    span {
+      font-size: 16px;
+      transform: rotate(-90deg);
+      letter-spacing: 0.15rem;
+      z-index: 1;
+      position: absolute;
+      margin-bottom: 0;
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 150px;
+      background: #000;
+      animation: pathmove 1.4s ease-in-out infinite;
+      opacity: 0;
+      margin-left: 50px;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .scrolldown {
+      margin-left: 8px;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .scrolldown span {
+      font-size: 10px;
+    }
+  }
+  
+  @media screen and (min-width: 1600px) {
+    .scrolldown span {
+      margin-top: 250px;
+    }
+  }
+  
+  @keyframes pathmove {
+    0% {
+      height: 0;
+      top: 0;
+      opacity: 0;
+    }
+  
+    30% {
+      height: 30px;
+      opacity: 1;
+    }
+  
+    100% {
+      height: 0;
+      top: 50px;
+      opacity: 0;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .scrolldown::after {
+      margin-left: 35px;
+      margin-top: -25px;
+    }
+  }
+  
+  @media screen and (min-width: 1600px) {
+    .scrolldown::after {
+      margin-top: 230px;
+    }
+  }
+  
+  /*///////////////work////////////*/
+  .work {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 300px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .work {
+      margin-top: 180px;
+      display: block;
+    }
+  }
+  
+  @media screen and (min-width: 1600px) {
+    .work {
+      margin-top: 500px;
+    }
+  }
+  
+  h2 {
+    color: #1c1818;
+    font-size: 2.5em;
+    font-weight: 300;
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.1em;
+    transform: rotate(-90deg);
+    margin-left: 100px;
+    margin-top: 60px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    h2 {
+      margin-bottom: 3rem;
+      transform: rotate(0);
+      margin-left: 30px;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .work_box {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+  }
+  
+  .slider {
+    visibility: hidden;
+    width: 85vw;
+  
+    &.slick-initialized {
+      visibility: visible;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .slider div {
+      width: 100vw;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .slider div a img {
+      width: 100vw;
+      margin: 0;
+    }
+  }
+  
+  .sakuhin_title {
+    color: #3e3e3e;
+    font-size: 0.7em;
+    position: relative;
+    font-family: "trajan-pro-3","Trajan Pro 3",serif;
+    letter-spacing: 0.1em;
+    padding-left: 5px;
+    margin-top: 0;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .sakuhin_title {
+      padding-left: 20px;
+    }
+  }
+  
+  .work_box .slider img {
+    width: 400px;
+    height: 300px;
+    margin-right: 0;
+    object-fit: contain;
+  
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .work_box .slider img:hover {
+      opacity: 1;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .slick-dots {
+      width: 100vw;
+    }
+  }
+  
+  /*///////////////////*/
+  
+  .more {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin: 50px 0 50px 280px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .more {
+      margin: 30px auto 0;
+      display: block;
+      width: 150px;
+      text-align: center;
+    }
+  }
+  
+  .more_text {
+    font-size: 0.8rem;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    border: 1px solid #000;
+    padding: 5px 30px;
+  
+    &:after {
+      position: absolute;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      transition: all .3s;
+    }
+  
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .more_text {
+      font-size: 0.5rem;
+    }
+  }
+  
+  /*///////////////////////////////*/
+  
+  .mind {
+    background-image: url(/assets/images/index//about.jpg);
+    height: 80vh;
+    margin-top: 200px;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .mind {
+      height: 40vh;
+      margin-top: 80px;
+      background-position: 40% 50%;
+    }
+  }
+  
+  @media screen and (min-width: 1500px) {
+    .mind {
+      height: 60vh;
+    }
+  }
+  
+  #mind_box {
+    width: 78.5%;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  
+  .mind_top {
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+    letter-spacing: 0.2em;
+    color: #767676;
+    opacity: 0.6;
+    margin-bottom: 0;
+    padding-top: 300px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .mind_top {
+      padding-top: 25%;
+      font-size: 0.8rem;
+    }
+  }
+  
+  h3 {
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    color: #fff;
+    opacity: 0.9;
+    margin-top: 5px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+    }
+  }
+  
+  .explain {
+    font-size: 1rem;
+    font-family: 'Zen Old Mincho', serif;
+    letter-spacing: 0.2em;
+    padding-bottom: 10px;
+    color: #fff;
+    opacity: 0.5;
+    border-bottom: 1px solid #fff;
+    width: 180px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .explain {
+      font-size: 12px;
+      width: 140px;
+      padding-bottom: 5px;
+      border-bottom: 0.5px solid #fff;
+      color: #343434;
+      border-bottom: 1px solid #343434;
+    }
+  }
+  
+  .mind_text {
+    font-size: 0.8rem;
+    font-family: 'Zen Old Mincho', serif;
+    letter-spacing: 0.25em;
+    color: #fff;
+    opacity: 0.5;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .mind_text {
+      font-size: 10px;
+      color: #343434;
+    }
+  }
+  
+  /*/////////////////////////*/
+  
+  .about {
+    display: flex;
+    margin-top: 250px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .about {
+      display: block;
+      margin-top: 80px;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #about_img {
+      width: 70vw;
+      margin: 50px 0 0 auto;
+    }
+  }
+  
+  #about_img img {
+    width: 600px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    #about_img img {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (min-width: 1500px) {
+    #about_img img {
+      width: 750px;
+    }
+  }
+  
+  #about_text {
+    width: 500px;
+    margin-right: 90px;
+    margin-left: auto;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #about_text {
+      width: 80%;
+      margin: auto;
+    }
+  }
+  
+  @media screen and (min-width: 1500px) {
+    #about_text {
+      margin-right: 130px;
+      padding-top: 150px;
+    }
+  }
+  
+  .about_tx_top {
+    display: flex;
+    margin-top: 20px;
+    align-items: flex-end;
+  
+    .ydesign {
+      font-size: 150px;
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+    }
+  
+    h4 {
+      font-size: 25px;
+      font-family: 'Times New Roman', Times, serif;
+      letter-spacing: 0.1rem;
+      margin: 0;
+      padding: 0;
+      line-height: 0.5em;
+      font-style: italic;
+      padding-bottom: 80px;
+      width: 100px;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .about_tx_top .ydesign {
+      font-size: 80px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+  }
+  
+  .about_title {
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.1rem;
+    font-size: 1.3rem;
+    margin: 50px 0 30px 0;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .about_title {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+  }
+  
+  .text {
+    font-size: 0.8rem;
+    color: #393939;
+    font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .text {
+      padding-right: 15px;
+      font-size: 0.7rem;
+      line-height: 1.5rem;
+      padding-right: 0;
+      font-size: 0.5rem;
+      letter-spacing: 0.1rem;
+      line-height: 1.3rem;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .english {
+    font-size: 0.6rem;
+    color: #393939;
+    font-family: 'Helvetica Neue Light';
+    letter-spacing: 0.1rem;
+    line-height: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .english {
+      font-size: 0.5rem;
+      line-height: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  .about_more {
+    font-size: 0.8rem;
+    color: #323232;
+    font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+    letter-spacing: 0.1rem;
+    border: 1px solid #323232;
+    display: block;
+    padding: 0.8rem 4rem;
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 50px 0 0;
+  
+    &:hover {
+      color: #868686;
+      opacity: 0.4;
+      transition: all 0.4s ease-out;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .about_more {
+      margin-bottom: 40px;
+      padding: 0.5rem 1.5rem;
+      font-size: 0.5rem;
+      margin: 0 0 0 auto;
+    }
+  }
+  
+  /*/////////////////////////*/
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .category {
+      width: 100vw;
+    }
+  }
+  
+  .back_box {
+    font-size: 2.5em;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.1em;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    z-index: 0;
+    width: 1100px;
+    height: 300px;
+    position: relative;
+    background-color: #000000;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 250px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .back_box {
+      margin-top: 80px;
+      width: 60vw;
+      height: 150px;
+      z-index: 0;
+      font-size: 25px;
+      padding: 30px;
+    }
+  }
+  
+  .category_box {
+    display: flex;
+    justify-content: space-between;
+    width: 1130px;
+    margin: -200px auto 200px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .category_box {
+      display: block;
+      width: 80%;
+    }
+  }
+  
+  #genre {
+    width: 250px;
+    padding: 0;
+  
+    img {
+      width: 250px;
+      position: relative;
+    }
+  
+    .category_text {
+      position: absolute;
+      margin-top: -20px;
+      margin-left: -30px;
+    }
+  
+    a {
+      color: #000;
+      text-decoration: none;
+      font-size: 40px;
+      font-family: 'Times New Roman', Times, serif;
+      letter-spacing: 0.1rem;
+      width: 150px;
+      height: 80px;
+      margin-top: 0;
+      font-style: italic;
+      line-height: 0.3em;
+  
+      span {
+        font-family: 'Times New Roman', Times, serif;
+        text-decoration: none;
+        font-size: 10px;
+      }
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    #genre {
+      margin-top: 40px;
+      width: 170px;
+      margin-right: 0;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #genre img {
+      width: 40vw;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #genre .category_text {
+      margin-top: -10px;
+      margin-left: -15px;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #genre a {
+      font-size: 25px;
+      height: 50px;
+    }
+  }
+  
+  /* /// */
+  
+  #genre_2 {
+    width: 250px;
+    padding: 0;
+    margin-top: 50px;
+  
+    img {
+      width: 250px;
+      position: relative;
+    }
+  
+    .category_text {
+      line-height: 1.1em;
+      position: absolute;
+      margin-top: -20px;
+      margin-left: -30px;
+    }
+  
+    a {
+      color: #000;
+      text-decoration: none;
+      font-size: 40px;
+      font-family: 'Times New Roman', Times, serif;
+      letter-spacing: 0.1rem;
+      width: 150px;
+      height: 80px;
+      margin-top: 0;
+      font-style: italic;
+      line-height: 0.3em;
+  
+      span {
+        font-family: 'Times New Roman', Times, serif;
+        text-decoration: none;
+        font-size: 10px;
+      }
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #genre_2 {
+      width: 150px;
+      margin: -40% 0 0 auto;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    #genre_2 img {
+      width: 40vw;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    #genre_2 .category_text {
+      margin-top: -10px;
+      margin-left: -15px;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #genre_2 a {
+      font-size: 25px;
+      height: 50px;
+    }
+  }
+  
+  /* /////////////////////// */
+  
+  .insta {
+    display: flex;
+    align-items: center;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .insta {
+      display: block;
+    }
+  }
+  
+  h6 {
+    color: #fff;
+    font-size: 2.5em;
+    background-color: #000;
+    letter-spacing: 0.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 100px 80px 350px 300px;
+    position: relative;
+    left: 0;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    h6 {
+      font-size: 20px;
+      padding: 50px;
+      width: 50vw;
+      height: 200px;
+    }
+  }
+  
+  #insta_img {
+    display: flex;
+    width: 800px;
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 130px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    #insta_img {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 3rem;
+      margin: 0 auto;
+      margin-top: -200px;
+      z-index: 0;
+    }
+  }
+  
+  .margin img {
+    width: 250px;
+    margin-right: 20px;
+  
+    &:hover {
+      opacity: 0.8;
+      transition: all 0.5s ease-out;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .margin img {
+      margin: 0;
+      width: 80%;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  @media screen and (min-width: 1500px) {
+    .margin img {
+      width: 350px;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .insta_img {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  .insta_r img {
+    margin-right: 0;
+    width: 250px;
+  
+    &:hover {
+      opacity: 0.8;
+      transition: all 0.5s ease-out;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .insta_r img {
+      margin: 0;
+      width: 80%;
+    }
+  }
+  
+  @media screen and (min-width: 1500px) {
+    .insta_r img {
+      width: 20rem;
+    }
+  }
+  
+  /*/////////////////////////*/
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .contact {
+      margin-top: 800px;
+      margin-bottom: 50px;
+    }
+  }
+  
+  .contact_box {
+    display: flex;
+    width: 1000px;
+    margin: 0  auto;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .contact_box {
+      display: block;
+    }
+  }
+  
+  .arch {
+    width: 100vw;
+    z-index: 0;
+    margin-top: 150px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .arch {
+      z-index: 99;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .contact_box {
+      width: 100vw;
+    }
+  }
+  
+  h4 {
+    color: #000;
+    font-size: 2.5rem;
+    position: relative;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.15rem;
+    margin: 0;
+    text-align: center;
+  
+    span {
+      color: #343434;
+      font-size: 0.8rem;
+      font-family: 'Times New Roman', Times, serif;
+      letter-spacing: 0.1rem;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    h4 {
+      width: 100vw;
+      font-size: 2rem;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    h4 span {
+      font-size: 0.5rem;
+      display: block;
+      margin-top: 5px;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .sm_contact {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  .contact_box p {
+    font-size: 0.8rem;
+    color: #000;
+    font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+    letter-spacing: 0.1rem;
+    line-height: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .contact_box p {
+      font-size: 0.5rem;
+      line-height: 1.3rem;
+      margin-bottom: 45px;
+      width: 100vw;
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+  
+  .contact_fm {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+    width: 600px;
+  
+    a {
+      text-decoration: none;
+      font-size: 0.8rem;
+      color: #000;
+      font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+      letter-spacing: 0.1rem;
+      border: 1px solid #A2A2A2;
+      background: #fff;
+      display: block;
+      padding: 0.8rem;
+      padding-right: 4rem;
+      padding-left: 4rem;
+      border-radius: 50px;
+  
+      &:hover {
+        color: #fff;
+        background-color: #707070;
+        transition: all 0.5s ease-out;
+      }
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .contact_fm {
+      display: block;
+      margin: 0;
+      text-align: center;
+      width: 100vw;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .contact_fm a {
+      width: 130px;
+      padding-right: 30px;
+      padding-left: 30px;
+      margin: 15px auto 0;
+      font-size: 0.5rem;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .br_pc {
+      display: none;
+    }
+  }
+  
+/*//////////////////////////////*/
+  
+  #page_top {
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    opacity: 0.6;
+  
+    a {
+      position: relative;
+      display: block;
+      width: 90px;
+      height: 90px;
+      text-decoration: none;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '↑';
+  
+      &::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '↑';
+        font-size: 25px;
+        color: #707070;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: -40px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+      }
+  
+      &::after {
+        content: 'PAGE TOP';
+        font-size: 13px;
+        position: absolute;
+        top: 45px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        color: #707070;
+      }
+  
+      position: relative;
+      display: block;
+      width: 90px;
+      height: 90px;
+      text-decoration: none;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '↑';
+  
+      &::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '↑';
+        font-size: 25px;
+        color: #707070;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: -40px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+      }
+  
+      &::after {
+        content: 'PAGE TOP';
+        font-size: 13px;
+        position: absolute;
+        top: 45px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        color: #707070;
+      }
+    }
+  
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    opacity: 0.6;
+  }
+  
+  /*////////////////////////////////*/
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #page_top {
+      width: 50px;
+      height: 50px;
+      right: 10px;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    #page_top a {
+      width: 50px;
+      height: 50px;
+      font-weight: 700;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    #page_top a::before {
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 20px;
+      color: #000;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    #page_top a::after {
+      font-size: 10px;
+      color: #000;
+    }
+  }
+}

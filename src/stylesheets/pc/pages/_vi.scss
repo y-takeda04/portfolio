@@ -1,0 +1,605 @@
+/* ------------------------------------------- SASS Information
+ Name:      _vi.scss
+ Author:    #{$WEB_AUTHOR}
+ Modifier:  #{$WEB_MODIFIER}
+----------------------------------------------------------- */
+.page-vi {
+  @include RESPONSIVE('PC', $MIN_WIDTH) {}
+  @include RESPONSIVE('SP', $MIN_WIDTH) {}
+
+
+h1 {
+  font-size: 90px;
+  padding-top: 50px;
+  margin-top: 0;
+  color: #060606;
+  padding-left: 150px;
+}
+
+.header_box {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  width: 650px;
+  padding-left: 0;
+  margin-bottom: 70px;
+
+  li {
+    font-size: 17px;
+    list-style-type: none;
+    color: #1E1E1E;
+    letter-spacing: 3px;
+    margin: 0 auto;
+  }
+}
+
+.all {
+  padding-left: 0 !important;
+  font-size: 17px;
+  list-style-type: none;
+  color: #1E1E1E;
+}
+
+/*/////////////////////////*/
+
+.btn_all {
+  display: inline-block;
+  position: relative;
+  font-size: 17px;
+  list-style-type: none;
+  padding-left: 35px;
+  color: #1E1E1E;
+  letter-spacing: 3px;
+  margin: 0 auto;
+
+  &:after {
+    position: absolute;
+    bottom: -2px;
+    left: 35px;
+    width: 42px;
+    height: 2px;
+    background-color: #707070;
+    transform: scale(0, 1);
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+    content: "";
+  }
+}
+
+a:hover:after {
+  transform: scale(1, 1);
+}
+
+.btn_vi {
+  border-bottom: solid;
+  color: #1E1E1E;
+  display: inline-block;
+  margin-left: 35px;
+  margin: 0 auto;
+}
+
+.btn_booklet {
+  display: inline-block;
+  position: relative;
+  font-size: 17px;
+  list-style-type: none;
+  padding-left: 35px;
+  color: #1E1E1E;
+  letter-spacing: 3px;
+  margin: 0 auto;
+
+  &:after {
+    position: absolute;
+    bottom: -2px;
+    left: 35px;
+    width: 100px;
+    height: 2px;
+    background-color: #707070;
+    transform: scale(0, 1);
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+    content: "";
+  }
+}
+
+a:hover:after {
+  transform: scale(1, 1);
+}
+
+.btn_wedding {
+  display: inline-block;
+  position: relative;
+  font-size: 17px;
+  list-style-type: none;
+  padding-left: 35px;
+  color: #1E1E1E;
+  letter-spacing: 3px;
+  margin: 0 auto;
+
+  &:after {
+    position: absolute;
+    bottom: -2px;
+    left: 35px;
+    width: 102px;
+    height: 2px;
+    background-color: #707070;
+    transform: scale(0, 1);
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+    content: "";
+  }
+}
+
+a:hover:after {
+  transform: scale(1, 1);
+}
+
+.btn_paper {
+  display: inline-block;
+  position: relative;
+  font-size: 17px;
+  list-style-type: none;
+  padding-left: 35px;
+  color: #1E1E1E;
+  letter-spacing: 3px;
+  margin: 0 auto;
+
+  &:after {
+    position: absolute;
+    bottom: -2px;
+    left: 35px;
+    width: 66px;
+    height: 2px;
+    background-color: #707070;
+    transform: scale(0, 1);
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+    content: "";
+  }
+}
+
+a:hover:after {
+  transform: scale(1, 1);
+}
+
+.btn_other {
+  display: inline-block;
+  position: relative;
+  font-size: 17px;
+  list-style-type: none;
+  padding-left: 35px;
+  color: #1E1E1E;
+  letter-spacing: 3px;
+  margin: 0 auto;
+
+  &:after {
+    position: absolute;
+    bottom: -2px;
+    left: 35px;
+    width: 72px;
+    height: 2px;
+    background-color: #707070;
+    transform: scale(0, 1);
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+    content: "";
+  }
+}
+
+a:hover:after {
+  transform: scale(1, 1);
+}
+
+/*//////////////*/
+
+.works {
+  color: #707070;
+  font-size: 40px;
+  text-align: center;
+  margin: 100px 0;
+}
+
+.works_box {
+  margin-top: 0;
+  margin-left: 167px;
+  display: flex;
+  width: 730px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+.lead {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/*画像のレスポンシブ*/
+
+/*///
+.zoomOutText img{
+ width:350px;
+eight:230px;
+}
+///*/
+
+/*　横幅　*/
+
+.zoomOutText {
+  width: 70%;
+  margin: 0 auto;
+
+  /*中央揃え*/
+}
+
+.cap {
+  text-align: center;
+}
+
+/*///1///*/
+
+.zoomOutText {
+  position: relative;
+  margin-right: 30px;
+
+  span.mask {
+    position: relative;
+    transition: .3s ease-in-out;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+  }
+
+  &:hover span.mask::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  img {
+    transform: scale(1.2);
+    filter: blur(0);
+    transition: .3s ease-in-out;
+    width: 350px;
+    height: 230px;
+  }
+
+  &:hover img {
+    /*hoverした時の変化*/
+    transform: scale(1);
+    filter: blur(2px);
+
+    /*ぼかし具合を変更したい場合はこの数値を変更*/
+  }
+
+  span.cap {
+    opacity: 0;
+    transition: .5s ease-in-out;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    line-height: 10px;
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+
+  &:hover span.cap {
+    opacity: 1;
+  }
+
+  span.cap2 {
+    opacity: 0;
+    transition: .5s ease-in-out;
+    position: absolute;
+    z-index: 3;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    line-height: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  &:hover span.cap2 {
+    opacity: 1;
+  }
+
+  position: relative;
+
+  span.mask {
+    position: relative;
+    transition: .3s ease-in-out;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+  }
+
+  &:hover span.mask::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  img {
+    transform: scale(1.2);
+    filter: blur(0);
+    transition: .3s ease-in-out;
+  }
+
+  &:hover img {
+    /*hoverした時の変化*/
+    transform: scale(1);
+    filter: blur(2px);
+
+    /*ぼかし具合を変更したい場合はこの数値を変更*/
+  }
+}
+
+/*//2//*/
+
+zoomOutText span.cap {
+  opacity: 0;
+  transition: .5s ease-in-out;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  line-height: 10px;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.zoomOutText {
+  &:hover span.cap {
+    opacity: 1;
+  }
+
+  span.cap2 {
+    opacity: 0;
+    transition: .5s ease-in-out;
+    position: absolute;
+    z-index: 3;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    line-height: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  &:hover span.cap2 {
+    opacity: 1;
+  }
+
+  position: relative;
+
+  span.mask {
+    position: relative;
+    transition: .3s ease-in-out;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+  }
+
+  &:hover span.mask::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  img {
+    transform: scale(1.2);
+    filter: blur(0);
+    transition: .3s ease-in-out;
+  }
+
+  &:hover img {
+    /*hoverした時の変化*/
+    transform: scale(1);
+    filter: blur(2px);
+
+    /*ぼかし具合を変更したい場合はこの数値を変更*/
+  }
+}
+
+/*//3//*/
+
+zoomOutText span.cap {
+  opacity: 0;
+  transition: .5s ease-in-out;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  line-height: 10px;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.zoomOutText {
+  &:hover span.cap {
+    opacity: 1;
+  }
+
+  span.cap2 {
+    opacity: 0;
+    transition: .5s ease-in-out;
+    position: absolute;
+    z-index: 3;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    line-height: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  &:hover span.cap2 {
+    opacity: 1;
+  }
+}
+
+/*////*/
+
+hr {
+  margin-top: 185px;
+}
+
+.back {
+  font-size: 16px;
+  color: #707070;
+  margin-left: 1250px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    color: #040404;
+  }
+}
+
+/*/////fooder//////////////////*/
+
+.fooder_box {
+  width: 100%;
+  margin-bottom: 0;
+  background: #0E0E0E;
+  height: 100vh;
+}
+
+h3 {
+  font-size: 45px;
+  color: aliceblue;
+  padding-left: 150px;
+  padding-top: 100px;
+  margin-bottom: 0;
+}
+
+.index_box {
+  display: flex;
+  padding: 10px 100px 0 100px;
+}
+
+.menu_box {
+  padding: 90px 200px 0 450px;
+}
+
+.menu {
+  color: #707070;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "GaramondPremrPro-ItDisp" serif;
+  letter-spacing: 2.5px;
+  font-size: 1.8rem;
+}
+
+.menu_box ul {
+  list-style-type: none;
+  color: #707070;
+  line-height: 40px;
+  padding-left: 0;
+  font-family: "Helvetica Neue Light";
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+/*////////*/
+
+.fooder_home, .fooder_works, .fooder_about {
+  letter-spacing: 0.5px;
+  line-height: 40px;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #707070;
+
+  &:hover {
+    color: #FFFFFF;
+  }
+}
+
+/*/////////*/
+
+.worklist_box {
+  padding: 90px 100px 0 0;
+}
+
+/*////*/
+
+.worklist {
+  color: #707070;
+  margin-top: 0;
+  font-family: "GaramondPremrPro-ItDisp" serif;
+  letter-spacing: 2.5px;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+.worklist_box ul {
+  list-style-type: none;
+  color: #707070;
+  line-height: 40px;
+  padding-left: 0;
+  font-family: "Helvetica Neue Light";
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+.fooder_works, .fooder_vi, .fooder_book, .fooder_wedding, .fooder_paper, .fooder_other {
+  letter-spacing: 0.5px;
+  line-height: 40px;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #707070;
+
+  &:hover {
+    color: #FFFFFF;
+  }
+}
+
+/*///////*/
+
+.social {
+  color: #707070;
+  padding-left: 550px;
+  font-family: "GaramondPremrPro-ItDisp" serif;
+  letter-spacing: 2.5px;
+  font-size: 1.8rem;
+}
+
+.insta_btn {
+  margin-left: 550px;
+}
+
+.instagram {
+  transition: all 0.3s ease 0s;
+}
+
+a:hover .instagram {
+  fill: #FFFFFF;
+}
+
+/*//////*/
+
+}

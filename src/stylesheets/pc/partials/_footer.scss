@@ -1,0 +1,135 @@
+/* ------------------------------------------- SASS Information
+ Name:      partials/_footer.scss
+ Author:    #{$WEB_AUTHOR}
+ Modifier:  #{$WEB_MODIFIER}
+----------------------------------------------------------- */
+#footer {
+  @include RESPONSIVE('PC', $MIN_WIDTH) {}
+  @include RESPONSIVE('SP', $MIN_WIDTH) {}
+
+  .fooder {
+    width: 100%;
+    margin-bottom: 0;
+    background: #000;
+    height: 380px;
+    margin-top: 10rem;
+    position: relative;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .fooder {
+      height: 200px;
+      margin-top: 0;
+    }
+  }
+  
+  .fooder_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 5rem;
+    margin: 0 auto;
+    border-bottom: 1px solid #fff;
+    padding: 110px 3rem 40px;
+  
+    a {
+      text-decoration: none;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .fooder_top {
+      padding-top: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      height: 3rem;
+    }
+  }
+  
+  h7 {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0;
+    font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+    letter-spacing: 0.1rem;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    h7 {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .insta_btn svg {
+      width: 20px;
+      left: 20px;
+    }
+  }
+  
+  .insta_btn:hover {
+    color: #707070;
+  }
+  
+  .menu_box {
+    width: 80%;
+    height: 3rem;
+    margin: 30px auto 0;
+  
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 50px;
+  
+      li a {
+        color: #fff;
+        font-size: 1rem;
+        font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+        letter-spacing: 0.3rem;
+        text-decoration: none;
+        margin-right: 3rem;
+  
+        &:hover {
+          color: #707070;
+          transition: all 0.5s ease-out;
+        }
+      }
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .menu_box {
+      margin-top: 1rem;
+    }
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH){
+    .menu_box ul li a {
+      font-size: 0.7rem;
+      margin-right: 1rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+   
+  .fooder_down {
+    color: #707070;
+    font-size: 0.5rem;
+    margin: 3% auto 0;
+    width: 100%;
+    font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+    letter-spacing: 0.1rem;
+    line-height: 1.5rem;
+    padding-left: 50px;
+  }
+  
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
+    .fooder_down {
+      font-size: 0.3rem;
+      line-height: 0.8rem;
+    }
+  }
+
+}
