@@ -313,12 +313,12 @@
 
   @include RESPONSIVE('SP', $MIN_WIDTH) {
     .genre ul li a {
-      width: 100px;
-      height: 100px;
+      width: 65px;
+      height: 65px;
       font-size: 9px;
       line-height: 50px;
       text-align: center;
-      padding: 5px 5px;
+      padding: 7px 5px;
       letter-spacing: 0;
     }
   }
@@ -428,6 +428,7 @@
     .genre2 ul {
       padding-top: 75vh;
       width: 85vw;
+      margin-bottom: 80px;
     }
   }
 
@@ -440,12 +441,12 @@
 
   @include RESPONSIVE('SP', $MIN_WIDTH) {
     .genre2 ul li a {
-      width: 100px;
-      height: 100px;
+      width: 65px;
+      height: 65px;
       font-size: 9px;
       line-height: 50px;
       text-align: center;
-      padding: 5px 5px;
+      padding: 7px 5px;
       letter-spacing: 0;
     }
   }
