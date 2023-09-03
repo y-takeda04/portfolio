@@ -38,7 +38,7 @@
     letter-spacing: 0.1rem;
   }
 
-    @include RESPONSIVE('SP', $MIN_WIDTH) {
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
     .header_top {
       font-size: 0.8rem;
       margin: 20px 10px 0 10px;
@@ -63,7 +63,7 @@
     z-index: 100;
   }
 
-    @include RESPONSIVE('SP', $MIN_WIDTH) {
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
     .hamburger {
       width: 25px;
       height: 20px;
@@ -113,7 +113,7 @@
     }
   }
 
-    @include RESPONSIVE('SP', $MIN_WIDTH) {
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
     .hamburger_bar {
       height: 2px;
     }
@@ -139,7 +139,7 @@
     }
   }
 
-    @include RESPONSIVE('SP', $MIN_WIDTH) {
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
     .nav {
       display: block;
       width: 100vw;
@@ -162,13 +162,13 @@
     }
   }
 
-    @include RESPONSIVE('SP', $MIN_WIDTH) {
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
     .flexbox a {
       width: 0;
     }
   }
 
-    @include RESPONSIVE('SP', $MIN_WIDTH) {
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
     .flexbox a img {
       display: none;
     }
@@ -187,7 +187,7 @@
     }
   }
 
-    @include RESPONSIVE('SP', $MIN_WIDTH) {
+  @include RESPONSIVE('SP', $MIN_WIDTH) {
     .nav-list {
       margin: auto 0;
       width: 100vw;
