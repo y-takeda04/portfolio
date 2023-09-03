@@ -746,6 +746,9 @@
       font-style: italic;
       padding-bottom: 80px;
       width: 100px;
+      @include RESPONSIVE('SP', $MIN_WIDTH){
+        padding-bottom: 30px;
+      }
     }
   }
   
@@ -1016,9 +1019,8 @@
       height: 50px;
     }
   }
-  
+
   /* /////////////////////// */
-  
   .insta {
     display: flex;
     align-items: center;
@@ -1066,7 +1068,7 @@
       text-align: center;
       margin-top: 3rem;
       margin: 0 auto;
-      margin-top: -200px;
+      margin-top: -100px;
       z-index: 0;
     }
   }
@@ -1084,7 +1086,7 @@
   @include RESPONSIVE('SP', $MIN_WIDTH){
     .margin img {
       margin: 0;
-      width: 80%;
+      width: 70%;
       margin-bottom: 1.5rem;
     }
   }
@@ -1116,168 +1118,168 @@
   @include RESPONSIVE('SP', $MIN_WIDTH) {
     .insta_r img {
       margin: 0;
-      width: 80%;
+      width: 70%;
     }
   }
   
   @media screen and (min-width: 1500px) {
     .insta_r img {
-      width: 20rem;
+      width: 350px;
     }
   }
-  
-  /*/////////////////////////*/
-  @include RESPONSIVE('SP', $MIN_WIDTH){
-    .contact {
-      margin-top: 800px;
-      margin-bottom: 50px;
-    }
+
+/*/////////////////////////*/
+@include RESPONSIVE('SP', $MIN_WIDTH){
+  .contact {
+    margin-top: 800px;
+    margin-bottom: 50px;
   }
-  
+}
+
+.contact_box {
+  display: flex;
+  width: 1000px;
+  margin: 0  auto;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH){
   .contact_box {
-    display: flex;
-    width: 1000px;
-    margin: 0  auto;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: block;
   }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH){
-    .contact_box {
-      display: block;
-    }
-  }
-  
+}
+
+.arch {
+  width: 100vw;
+  z-index: 0;
+  margin-top: 150px;
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH){
   .arch {
+    z-index: 99;
+  }
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH){
+  .contact_box {
     width: 100vw;
-    z-index: 0;
-    margin-top: 150px;
   }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH){
-    .arch {
-      z-index: 99;
-    }
-  }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH){
-    .contact_box {
-      width: 100vw;
-    }
-  }
-  
-  h4 {
-    color: #000;
-    font-size: 2.5rem;
-    position: relative;
-    width: 100%;
+}
+
+h4 {
+  color: #000;
+  font-size: 2.5rem;
+  position: relative;
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0.15rem;
+  margin: 0;
+  text-align: center;
+
+  span {
+    color: #343434;
+    font-size: 0.8rem;
     font-family: 'Times New Roman', Times, serif;
-    letter-spacing: 0.15rem;
-    margin: 0;
-    text-align: center;
-  
-    span {
-      color: #343434;
-      font-size: 0.8rem;
-      font-family: 'Times New Roman', Times, serif;
-      letter-spacing: 0.1rem;
-    }
+    letter-spacing: 0.1rem;
   }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH) {
-    h4 {
-      width: 100vw;
-      font-size: 2rem;
-    }
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH) {
+  h4 {
+    width: 100vw;
+    font-size: 2rem;
   }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH){
-    h4 span {
-      font-size: 0.5rem;
-      display: block;
-      margin-top: 5px;
-    }
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH){
+  h4 span {
+    font-size: 0.5rem;
+    display: block;
+    margin-top: 5px;
   }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH) {
-    .sm_contact {
-      margin-bottom: 2rem;
-    }
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH) {
+  .sm_contact {
+    margin-bottom: 2rem;
   }
-  
+}
+
+.contact_box p {
+  font-size: 0.8rem;
+  color: #000;
+  font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH) {
   .contact_box p {
+    font-size: 0.5rem;
+    line-height: 1.3rem;
+    margin-bottom: 45px;
+    width: 100vw;
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+.contact_fm {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+  width: 600px;
+
+  a {
+    text-decoration: none;
     font-size: 0.8rem;
     color: #000;
     font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
     letter-spacing: 0.1rem;
-    line-height: 1.5rem;
-    margin-bottom: 3rem;
-  }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH) {
-    .contact_box p {
-      font-size: 0.5rem;
-      line-height: 1.3rem;
-      margin-bottom: 45px;
-      width: 100vw;
-      text-align: center;
-      margin-top: 30px;
+    border: 1px solid #A2A2A2;
+    background: #fff;
+    display: block;
+    padding: 0.8rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    border-radius: 50px;
+
+    &:hover {
+      color: #fff;
+      background-color: #707070;
+      transition: all 0.5s ease-out;
     }
   }
-  
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH) {
   .contact_fm {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 4rem;
-    width: 600px;
-  
-    a {
-      text-decoration: none;
-      font-size: 0.8rem;
-      color: #000;
-      font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
-      letter-spacing: 0.1rem;
-      border: 1px solid #A2A2A2;
-      background: #fff;
-      display: block;
-      padding: 0.8rem;
-      padding-right: 4rem;
-      padding-left: 4rem;
-      border-radius: 50px;
-  
-      &:hover {
-        color: #fff;
-        background-color: #707070;
-        transition: all 0.5s ease-out;
-      }
-    }
+    display: block;
+    margin: 0;
+    text-align: center;
+    width: 100vw;
   }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH) {
-    .contact_fm {
-      display: block;
-      margin: 0;
-      text-align: center;
-      width: 100vw;
-    }
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH){
+  .contact_fm a {
+    width: 50vw;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin: 15px auto 0;
+    font-size: 0.5rem;
   }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH){
-    .contact_fm a {
-      width: 130px;
-      padding-right: 30px;
-      padding-left: 30px;
-      margin: 15px auto 0;
-      font-size: 0.5rem;
-    }
+}
+
+@include RESPONSIVE('SP', $MIN_WIDTH) {
+  .br_pc {
+    display: none;
   }
-  
-  @include RESPONSIVE('SP', $MIN_WIDTH) {
-    .br_pc {
-      display: none;
-    }
-  }
-  
+}
+
   /*//////////////////////////////*/
   
   #page_top {
