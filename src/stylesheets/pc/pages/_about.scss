@@ -219,10 +219,11 @@
   
   #container {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     background: #fff;
-    width: 100%;
+    width: 85%;
     height: 1100px;
+    margin: 0 auto 0;
   }
   
   @include RESPONSIVE('SP', $MIN_WIDTH)  {
@@ -277,7 +278,7 @@
   .plofile {
     color: #000;
     font-size: 0.9rem;
-    margin-top: 130px;
+    margin-top: 100px;
     margin-left: 200px;
     line-height: 33px;
     font-family: "GalanoClassic-Regular", nimbus-sans, sans-serif;
