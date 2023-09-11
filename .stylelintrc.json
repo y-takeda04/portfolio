@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "stylelint-config-recess-order",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "no-descending-specificity": null
+  },
+  "ignoreFiles": [
+    "**/htdocs/assets/css/*.css",
+    "**/src/common/stylesheets/*.scss",
+    "**/src/common/stylesheets/**/*.scss",
+    "**/src/stylesheets/pc/layouts/*.scss"
+  ]
+}

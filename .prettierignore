@@ -1,0 +1,5 @@
+htdocs
+tasks
+src/common/scripts/*
+src/common/stylesheets/**/*
+src/stylesheets/pc/layouts/*
